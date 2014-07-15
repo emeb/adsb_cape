@@ -1,0 +1,4 @@
+schematics	adsb_cape_pg1.sch adsb_cape_pg2.sch adsb_cape_pg3.sch
+output-name	adsb_cape
+elements-dir	../pcb-elements/
+skip-m4
