@@ -2624,17 +2624,6 @@ T 3900 4600 5 10 0 0 0 6 1
 net=LOG_VIDEO:1
 }
 N 8900 9500 8900 7300 4
-C 5300 4200 1 0 0 npn-3.sym
-{
-T 6200 4700 5 10 0 0 0 0 1
-device=NPN_TRANSISTOR
-T 6200 4700 5 10 1 1 0 0 1
-refdes=Q201
-T 6200 4400 5 10 1 1 0 0 1
-value=MMBT2N2222
-T 5300 4200 5 10 0 0 0 0 1
-footprint=SOT-23
-}
 C 5700 5800 1 0 0 EMBEDDEDgeneric-power.sym
 [
 L 5750 6000 6050 6000 3 0 0 0 -1 -1
@@ -2855,3 +2844,69 @@ footprint=my_0603
 N 4400 3800 4200 3800 4
 N 4200 3800 4200 4700 4
 N 5300 3800 5900 3800 4
+C 5300 4200 1 0 0 EMBEDDEDBC547-3.sym
+[
+P 5900 5200 5900 5000 1 0 0
+{
+T 5672 5056 5 10 0 1 0 0 1
+pinlabel=C
+T 5754 5243 5 10 0 1 0 0 1
+pintype=pas
+T 5957 5076 5 6 0 0 0 0 1
+pinseq=3
+T 5800 5050 5 6 1 1 0 0 1
+pinnumber=3
+}
+P 5900 4400 5900 4200 1 0 1
+{
+T 5700 4203 5 10 0 1 0 0 1
+pinlabel=E
+T 6038 4349 5 10 0 1 0 0 1
+pintype=pas
+T 5954 4250 5 6 0 0 0 0 1
+pinseq=1
+T 5800 4250 5 6 1 1 0 0 1
+pinnumber=1
+}
+V 5800 4701 316 3 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
+L 5900 4400 5700 4600 3 0 0 0 -1 -1
+L 5900 5000 5700 4800 3 0 0 0 -1 -1
+L 5700 4900 5700 4500 3 0 0 0 -1 -1
+P 5300 4700 5484 4700 1 0 0
+{
+T 5383 4535 5 10 0 1 0 0 1
+pinlabel=B
+T 5484 4888 5 10 0 1 90 0 1
+pintype=pas
+T 5368 4747 5 6 0 0 90 0 1
+pinseq=2
+T 5400 4750 5 6 1 1 0 0 1
+pinnumber=2
+}
+L 5700 4700 5484 4700 3 0 0 0 -1 -1
+L 5900 4400 5864 4472 3 0 0 0 -1 -1
+L 5900 4400 5828 4436 3 0 0 0 -1 -1
+L 5828 4436 5864 4472 3 0 0 0 -1 -1
+T 6200 4500 5 10 0 1 0 0 1
+device=BC547
+T 6200 4700 8 10 0 1 0 0 1
+refdes=Q?
+T 6200 5200 8 10 0 1 0 0 1
+footprint=TO92
+T 6200 4900 8 10 0 0 0 0 1
+numslots=0
+T 5400 5400 8 10 0 1 0 0 1
+description=BC547 NPN general purpose transistor
+T 5400 5600 8 10 0 1 0 0 1
+documentation=http://www.semiconductors.philips.com/pip/BC547C.html
+T 5400 5800 8 10 0 1 0 0 1
+author=Karel 'Clock' Kulhavy clock -=[at]=- twibright -=[dot]=- com
+]
+{
+T 6200 4500 5 10 1 1 0 0 1
+device=MMBT2N2222
+T 6200 4700 5 10 1 1 0 0 1
+refdes=Q201
+T 6200 5200 5 10 0 1 0 0 1
+footprint=SOT23-95P-240L1-3N__On-Semi_318-08-Package
+}
