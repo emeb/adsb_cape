@@ -1,7 +1,10 @@
 adsb_cape
 =========
 
-Hardware and software for a Beaglebone-based ADS-B receiver.
+Hardware and software for a Beaglebone-based ADS-B receiver. More details
+about the design are at the following site:
+
+http://ebrombaugh.studionebula.com/radio/adsb-cape/index.html
 
 LICENSE
 =======
