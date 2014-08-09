@@ -2374,7 +2374,7 @@ Element["" "my_0805" "L401" "82nH" 71.3590mm 468.98mil -58.19mil -89.00mil 0 65 
 
 	)
 
-Element["" "my_0603" "R406" "22.1_1%" 66.2061mm 1005.00mil -215.11mil -24.40mil 0 100 ""]
+Element["" "my_0603" "R406" "22.1_1%" 66.2061mm 1005.00mil -185.11mil -14.40mil 0 70 ""]
 (
 	Pad[31.49mil 0.0000 35.43mil 0.0000 39.37mil 20.00mil 44.00mil "input" "1" "square,edge2"]
 	Pad[-35.43mil 0.0000 -31.49mil 0.0000 39.37mil 20.00mil 44.00mil "input" "2" "square"]
@@ -2385,7 +2385,7 @@ Element["" "my_0603" "R406" "22.1_1%" 66.2061mm 1005.00mil -215.11mil -24.40mil 
 
 	)
 
-Element["" "my_0603" "R404" "22.1_1%" 66.1279mm 935.00mil -217.03mil -24.40mil 0 100 ""]
+Element["" "my_0603" "R404" "22.1_1%" 66.1279mm 935.00mil -187.03mil -14.40mil 0 70 ""]
 (
 	Pad[-35.43mil 0.0000 -31.49mil 0.0000 39.37mil 20.00mil 44.00mil "input" "1" "square"]
 	Pad[31.49mil 0.0000 35.43mil 0.0000 39.37mil 20.00mil 44.00mil "input" "2" "square,edge2"]
@@ -2396,7 +2396,7 @@ Element["" "my_0603" "R404" "22.1_1%" 66.1279mm 935.00mil -217.03mil -24.40mil 0
 
 	)
 
-Element["" "my_0603" "R405" "32.4_1%" 2570.00mil 825.00mil -180.11mil -29.40mil 0 100 ""]
+Element["" "my_0603" "R405" "32.4_1%" 2570.00mil 825.00mil -155.11mil -19.40mil 0 70 ""]
 (
 	Pad[0.0000 -35.43mil 0.0000 -31.49mil 39.37mil 20.00mil 44.00mil "input" "1" "square"]
 	Pad[0.0000 31.49mil 0.0000 35.43mil 39.37mil 20.00mil 44.00mil "input" "2" "square,edge2"]
@@ -3410,14 +3410,14 @@ Layer(7 "signal3")
 )
 Layer(8 "outline")
 (
-	Line[3400.00mil 500.00mil 3400.00mil 1650.00mil 10.00mil 20.00mil "clearline,selected"]
+	Line[3400.00mil 500.00mil 3400.00mil 1650.00mil 10.00mil 20.00mil "clearline"]
 	Line[250.00mil 0.0000 250.00mil 625.00mil 10.00mil 20.00mil "clearline"]
 	Line[0.0000 1350.00mil 800.00mil 1350.00mil 10.00mil 20.00mil "clearline"]
 	Line[250.00mil 625.00mil 800.00mil 625.00mil 10.00mil 20.00mil "clearline"]
 	Line[800.00mil 625.00mil 800.00mil 1350.00mil 10.00mil 20.00mil "clearline"]
 	Line[0.0000 1350.00mil 0.0000 1900.00mil 10.00mil 20.00mil "clearline"]
 	Line[250.00mil 2150.00mil 2900.00mil 2150.00mil 10.00mil 20.00mil "clearline"]
-	Line[2900.00mil 0.0000 250.00mil 0.0000 10.00mil 20.00mil "clearline"]
+	Line[2900.00mil 0.0000 250.00mil 0.0000 10.00mil 20.00mil "clearline,selected"]
 	Arc[2900.00mil 500.00mil 500.00mil 500.00mil 10.00mil 20.00mil -90 -90 "clearline"]
 	Arc[2900.00mil 1650.00mil 500.00mil 500.00mil 10.00mil 20.00mil 180 -90 "clearline"]
 	Arc[250.00mil 1900.00mil 250.00mil 250.00mil 10.00mil 20.00mil 90 -90 "clearline"]
