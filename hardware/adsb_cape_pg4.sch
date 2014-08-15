@@ -1,4 +1,4 @@
-v 20110115 2
+v 20111231 2
 C 1000 1000 0 0 0 EMBEDDEDtitle-bordered-C.sym
 [
 B 1000 1000 22000 17000 15 0 0 0 -1 -1 0 -1 -1 -1 -1 -1
@@ -1411,7 +1411,7 @@ device=BNC
 T 2150 14550 5 10 0 0 0 0 1
 device=BNC
 T 1800 13900 5 10 0 0 0 6 1
-footprint=SMA_ENDLAUNCH
+footprint=SMA_ENDLAUNCH_dual
 T 1800 14700 5 10 1 1 0 0 1
 refdes=J401
 }
