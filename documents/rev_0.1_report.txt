@@ -1,0 +1,29 @@
+Evaluation Report for Revision 0.1
+----------------------------------
+
+PCB layout issues:
+
+1) Via in pad of R103
+2) Amp U402 footprint is rotated 180deg
+3) Multiple unconnected gnd vias near J401
+
+Schematic issues:
+
+1) Missing 50ohm load across output of SAW U405
+2) R305 prevents BBB from booting - remove to allow FPGA pins to float.
+3) Capacitors C403, C404, C410, C411, C412 should all be 10pf to reduce low
+   frequency gain of RF path.
+4) R402, R403 not needed - replace with trace from U401-11 to U401-12
+5) Q201, R201, R202, C213 not needed
+6) Break out U202-1 to jumper for testing.
+7) Add optional 3-pin header (GND, log video, +5V) for off-board TRF input
+   to ADC.
+
+System Issues:
+
+1) Heavy interference from BBB HDMI - must be disabled in kernal args.
+2) Strong 25kHz interference - still hunting for source
+3) Strong 20MHz interference - appears to come from on-board oscillator.
+   May not be an issue since it's synchronous to ADC sampling, but does
+   bear further investigation.
+   
