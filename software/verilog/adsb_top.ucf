@@ -1,0 +1,89 @@
+# UCF constraints file for rxadc connected to bone fpga in XC3S200AVQ100
+
+# We're running this part with VCCAUX = 3.3V
+CONFIG VCCAUX=3.3;
+
+# main clock input
+NET "FPGA_CLK20"  LOC = "P43"  ;
+NET "FPGA_CLK20" TNM_NET = "FPGA_CLK20";
+TIMESPEC "TS_FPGA_CLK20" = PERIOD "FPGA_CLK20" 50 ns HIGH 50 %;
+NET "FPGA_CLK20" IOSTANDARD = LVCMOS33;
+
+# main reset input
+NET "SYS_RESET"  LOC = "P40"  ;
+NET "SYS_RESET" IOSTANDARD = LVCMOS33;
+
+# AUX I/O from the I2C Expander
+NET "FPGA_AUX<0>"  LOC = "P39" ;
+NET "FPGA_AUX<1>"  LOC = "P37" ;
+NET "FPGA_AUX<2>"  LOC = "P36" ;
+NET "FPGA_AUX<3>"  LOC = "P35" ;
+NET "FPGA_AUX<4>"  LOC = "P34" ;
+NET "FPGA_AUX*" IOSTANDARD = LVCMOS33;
+
+# User LED Outputs
+NET "USER1"  LOC = "P31" ;
+NET "USER2"  LOC = "P32" ;
+NET "USER3"  LOC = "P33" ;
+NET "USER*" IOSTANDARD = LVCMOS33;
+
+# Mode Inputs - NC
+#NET "M1"  LOC = "P23" ;
+#NET "M1" IOSTANDARD = LVCMOS33;
+#NET "M2"  LOC = "P24" ;
+#NET "M2" IOSTANDARD = LVCMOS33;
+#NET "M3"  LOC = "P25" ;
+#NET "M3" IOSTANDARD = LVCMOS33;
+
+# PRU Interface to BB
+NET "PRU1<0>"  LOC = "P98" ;
+NET "PRU1<1>"  LOC = "P94" ;
+NET "PRU1<2>"  LOC = "P4" ;
+NET "PRU1<3>"  LOC = "P3" ;
+NET "PRU1<4>"  LOC = "P6" ;
+NET "PRU1<5>"  LOC = "P5" ;
+NET "PRU1<6>"  LOC = "P10" ;
+NET "PRU1<7>"  LOC = "P9" ;
+NET "PRU1<8>"  LOC = "P16" ;
+NET "PRU1<9>"  LOC = "P13" ;
+NET "PRU1<10>"  LOC = "P15" ;
+NET "PRU1<11>"  LOC = "P12" ;
+NET "PRU1<12>"  LOC = "P19" ;
+NET "PRU1<12>"  LOC = "P20" ;
+NET "PRU1*" IOSTANDARD = LVCMOS33;
+
+# Misc interfaces to BB
+NET "MCASP0_ACLKX"  LOC = "P89" ;
+NET "MCASP0_AXR0"   LOC = "P88" ;
+NET "MCASP0_FSX"    LOC = "P86" ;
+NET "MCASP0_AHCLKR" LOC = "P85" ;
+NET "MCASP0_FSR"    LOC = "P84" ;
+NET "MCASP0_AHCLKX" LOC = "P83" ;
+NET "MCASP0_*" IOSTANDARD = LVCMOS33;
+NET "UART1_RXD"     LOC = "P78" ;
+NET "UART1_TXD"     LOC = "P77" ;
+NET "UART1_*" IOSTANDARD = LVCMOS33;
+
+# SPI Interface to BB
+NET "SPI0_CS0"  LOC = "P50" ;
+NET "SPI0_MOSI"  LOC = "P51" ;
+NET "SPI0_MISO"  LOC = "P52" ;
+NET "SPI0_SCLK"  LOC = "P53" ;
+NET "SPI0_SCLK"  CLOCK_DEDICATED_ROUTE ;
+NET "SPI0_SCLK" TNM_NET = "SPI0_SCLK";
+TIMESPEC "TS_SPI0_SCLK" = PERIOD "SPI0_SCLK" 20 ns HIGH 50 %;
+NET "SPI0_*" IOSTANDARD = LVCMOS33;
+
+# ADC interface
+NET "adc_otr"    LOC = "P57" ;	# B3>B7 = U102-13 : otr
+NET "adc_dat<9>" LOC = "P59" ;	# B7>B3 = U102-12 : d9
+NET "adc_dat<8>" LOC = "P60" ;	# B2>B6 = U102-11 : d8
+NET "adc_dat<7>" LOC = "P61" ;	# A2>A6 = U102-3  : d0
+NET "adc_dat<6>" LOC = "P62" ;	# A7>A3 = U102-4  : d1
+NET "adc_dat<5>" LOC = "P64" ;	# A3>A7 = U102-5  : d2
+NET "adc_dat<4>" LOC = "P65" ;	# A8>A4 = U102-6  : d3
+NET "adc_dat<3>" LOC = "P70" ;	# A4>A8 = U102-7  : d4
+NET "adc_dat<2>" LOC = "P71" ;	# B5>B1 = U102-8  : d5
+NET "adc_dat<1>" LOC = "P72" ;	# B1>B5 = U102-9  : d6
+NET "adc_dat<0>" LOC = "P73" ;	# B6>B2 = U102-10 : d7
+NET "adc_*" IOSTANDARD = LVCMOS33;
