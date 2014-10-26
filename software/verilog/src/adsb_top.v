@@ -94,9 +94,9 @@ module adsb_top
 		begin
 			cnt_limit_reg <= 32'd40000000;	// 1 sec blink rate
 			stretch_reg <= 32'd800000;		// pulse stretch period
-			mtl <= 10'd620; 				// Min Trigger Level
-			noise_ride <= 1'b0; 			// Enable noise riding MTL
-			det_ena <= 1'b0; 				// Enable detector
+			mtl <= 10'd40; 				// Min Trigger Level
+			noise_ride <= 1'b1; 			// Enable noise riding MTL
+			det_ena <= 1'b1; 				// Enable detector
 		end
 		else
 		begin			
@@ -121,9 +121,22 @@ module adsb_top
 		
 	// reclock the adc data
 	reg [9:0] log_video;
+	wire dec_ena = 1'b1;	// every clock is valid
 	always @(posedge clk)
 		log_video <= adc_dat;
-		
+	
+	// filter the adc data
+	wire [16:0] log_video_filtered_raw;
+	fir_compiler_v5_0 
+		uFIR(.sclr(reset), .ce(dec_ena), .rfd(), .rdy(), .clk(clk),
+			.dout(log_video_filtered_raw), .din(log_video)
+		);
+	
+	// saturate back to 10 bits
+	wire [9:0] log_video_filtered;
+	usat #(.isz(17), .osz(10))
+		usat(.in(log_video_filtered_raw), .out(log_video_filtered));
+	
 	// instantiate the ADS-B Receiver
 	wire trigger, data_start;
 	wire ena_out, data, conf, done;
@@ -134,7 +147,7 @@ module adsb_top
 	adsb_rx #(.width(10))
 		uADSBRX(.clock(clk), .reset(reset), .ena(dec_ena),
 			.det_ena(det_ena), .noise_ride(noise_ride),
-			.mtl(mtl), .logmag(log_video),
+			.mtl(mtl), .logmag(log_video_filtered),
 			.trigger(trigger), .data_start(data_start),
 			.ena_out(ena_out), .data(data), .conf(conf), .done(done),
 			.watchdog_reset(watchdog_reset),

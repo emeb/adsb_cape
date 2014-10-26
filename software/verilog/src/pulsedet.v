@@ -24,8 +24,8 @@ module pulsedet
 	
 	// internal constants
 	parameter noise_coef = 8;			// Noise IIR power of 2 coeff
-	parameter [width-1:0] desense_amt = 20;		// thresh below P1
-	parameter [width-1:0] desense_qual = 23;	// allow desense above MTL
+	parameter [width-1:0] desense_amt = 60;		// thresh below P1
+	parameter [width-1:0] desense_qual = 63;	// allow desense above MTL
 	parameter [width-1:0] retrig_diff = 96;		// allow retrig above thresh
 	parameter qual_len = 6;						// 300ns per DO260
 	
