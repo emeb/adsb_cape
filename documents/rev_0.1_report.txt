@@ -6,6 +6,8 @@ PCB layout issues:
 1) Via in pad of R103
 2) Amp U402 footprint is rotated 180deg
 3) Multiple unconnected gnd vias near J401
+4) Investigate GND plane cuts to reduce interference between digital and
+   RF sections.
 
 Schematic issues:
 
@@ -18,6 +20,8 @@ Schematic issues:
 6) Break out U202-1 to jumper for testing.
 7) Add optional 3-pin header (GND, log video, +5V) for off-board TRF input
    to ADC.
+8) Add 0603 cap footprint to U401-14 to allow reduction of video bandwidth
+   prior to ADC in order to reduce aliasing. 5-15pf recommended.
 
 System Issues:
 
@@ -26,4 +30,6 @@ System Issues:
 3) Strong 20MHz interference - appears to come from on-board oscillator.
    May not be an issue since it's synchronous to ADC sampling, but does
    bear further investigation.
-   
+4) Highly sensitive to interference arriving through SMA RF input.
+   Double-shielded coax and locating antenna far from board helps a lot.
+ 
